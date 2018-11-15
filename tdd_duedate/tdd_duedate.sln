@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillDueDateUnitTest1.cs", "Tests\BillDueDateUnitTest1.cs.csproj", "{B7466D53-9181-4669-9302-B00F0A1B5A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDateCheck", "PaymentDateCheck\PaymentDateCheck.csproj", "{12D0E8EA-F0EA-4A6D-8296-E1FD75813724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7466D53-9181-4669-9302-B00F0A1B5A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7466D53-9181-4669-9302-B00F0A1B5A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7466D53-9181-4669-9302-B00F0A1B5A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7466D53-9181-4669-9302-B00F0A1B5A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D0E8EA-F0EA-4A6D-8296-E1FD75813724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D0E8EA-F0EA-4A6D-8296-E1FD75813724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D0E8EA-F0EA-4A6D-8296-E1FD75813724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D0E8EA-F0EA-4A6D-8296-E1FD75813724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE09D4F1-D99B-40E0-A9DE-EEE67CAA4B00}
+	EndGlobalSection
+EndGlobal
