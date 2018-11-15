@@ -17,6 +17,20 @@ namespace Tests
             var output = _bill.CheckDate(input);
             var expected = input;
             Assert.AreEqual(expected, output);
+            Console.WriteLine("Output is: " + output);
+        }
+
+        [Test]
+        public void ifSaturday_ReturnMonday()
+        {
+            var input = new DateTime(2018, 8, 6);
+            var mockHolidayService = new HolidayService();
+            var _bill = new Bill(mockHolidayService);
+            var output = _bill.CheckDate(input);
+            var expected = input;
+            Assert.AreEqual(expected, output);
+            Console.WriteLine("Output is: " + output);
+
         }
     }
 }
