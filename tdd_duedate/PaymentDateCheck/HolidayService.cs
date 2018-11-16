@@ -10,6 +10,7 @@ namespace PaymentDateCheck
             var holidays = new List<DateTime>();
             holidays.Add(new DateTime(2018, 12, 25));
             holidays.Add(new DateTime(2018, 8, 3));
+            holidays.Add(new DateTime(2018, 7, 4));
             if (holidays.Contains(dueDate))
                 return true;
 

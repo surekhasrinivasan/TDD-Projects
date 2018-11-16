@@ -9,18 +9,28 @@ namespace PaymentDateCheck
 
         IHolidayService holidayService;
 
-        public Bill(IHolidayService hs)
+        public Bill(IHolidayService holidayService)
         {
-            this.holidayService = hs;
+            this.holidayService = holidayService;
         }
         
         public DateTime CheckDate(DateTime dueDate)
         {
-            if(dueDate.DayOfWeek == DayOfWeek.Saturday)
+            DateTime paymentDate = dueDate;
+
+            if (dueDate.DayOfWeek == DayOfWeek.Saturday)
             {
-               dueDate = dueDate.AddDays(2);
+                paymentDate = paymentDate.AddDays(2);
             }
-            return dueDate;
+            if (dueDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                paymentDate = paymentDate.AddDays(1);
+            }
+            if (holidayService.isHoliday(dueDate))
+            {
+                paymentDate = paymentDate.AddDays(1);
+            }
+            return paymentDate;
         }
     }
 
