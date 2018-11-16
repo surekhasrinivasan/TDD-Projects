@@ -18,15 +18,19 @@ namespace PaymentDateCheck
         {
             DateTime paymentDate = dueDate;
 
-            if (dueDate.DayOfWeek == DayOfWeek.Saturday)
-            {
-                paymentDate = paymentDate.AddDays(2);
-            }
-            if (dueDate.DayOfWeek == DayOfWeek.Sunday)
-            {
-                paymentDate = paymentDate.AddDays(1);
-            }
-            if (holidayService.isHoliday(dueDate))
+            //if (dueDate.DayOfWeek == DayOfWeek.Saturday)
+            //{
+            //    paymentDate = paymentDate.AddDays(2);
+            //}
+            //if (dueDate.DayOfWeek == DayOfWeek.Sunday)
+            //{
+            //    paymentDate = paymentDate.AddDays(1);
+            //}
+            //if (holidayService.isHoliday(dueDate))
+            //{
+            //    paymentDate = paymentDate.AddDays(1);
+            //}
+            while ((holidayService.isHoliday(paymentDate)) || (paymentDate.DayOfWeek == DayOfWeek.Sunday) || (paymentDate.DayOfWeek == DayOfWeek.Saturday))
             {
                 paymentDate = paymentDate.AddDays(1);
             }
