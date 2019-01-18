@@ -20,10 +20,10 @@ namespace Mastermind.Service
 
         public int[] CheckScore(int[] input)
         {
-            if (input.Length > 4)
+            if (input.Length > 4 || input.Length < 4)
             {
-                throw new System.ArgumentException("Length of the array should not be greater than 4");
-            }        
+                throw new System.ArgumentException("Length of the array should not be greater than 4 or less than 4");
+            }
             return input;
         }
 
