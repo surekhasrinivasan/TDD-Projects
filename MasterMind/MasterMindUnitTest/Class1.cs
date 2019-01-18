@@ -24,7 +24,14 @@ namespace Mastermind.Service
             {
                 throw new System.ArgumentException("Length of the array should not be greater than 4 or less than 4");
             }
-            return input;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] >= 6)
+                {
+                    throw new System.ArgumentException("Number in the array cannot be greater than 6");
+                }
+            }
+             return input;
         }
 
     }
