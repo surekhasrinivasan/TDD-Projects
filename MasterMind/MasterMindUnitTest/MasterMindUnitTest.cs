@@ -37,6 +37,11 @@ namespace Tests
             Assert.Throws<System.ArgumentException>(() => game.CheckScore(input));
         }
 
-
+        [Test]
+        public void ThrowExceptionIfAllNumbersInAttemptArrayAreNotUnique()
+        {
+            var input = new int[] { 1, 1, 2, 3 };
+            Assert.Throws<System.ArgumentException>(() => game.CheckScore(input));
+        }
     }
 }

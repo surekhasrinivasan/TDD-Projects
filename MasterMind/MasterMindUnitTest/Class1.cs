@@ -19,7 +19,7 @@ namespace Mastermind.Service
        }
 
         public int[] CheckScore(int[] input)
-        {
+        {            
             if (input.Length > 4 || input.Length < 4)
             {
                 throw new System.ArgumentException("Length of the array should not be greater than 4 or less than 4");
@@ -30,8 +30,18 @@ namespace Mastermind.Service
                 {
                     throw new System.ArgumentException("Number in the array cannot be greater than 6 or less than 1");
                 }
+                for (int j = 0; j < input.Length; j++)
+                {
+                    if (i == j)
+                        j++;
+
+                    if (input[i] == input[j])
+                    {
+                        throw new System.ArgumentException("Numbers in the array should be unique");
+                    }
+                }
             }
-             return input;
+            return input;
         }
 
     }
