@@ -26,9 +26,9 @@ namespace Mastermind.Service
             }
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] >= 6)
+                if (input[i] >= 6 || input[i] < 1)
                 {
-                    throw new System.ArgumentException("Number in the array cannot be greater than 6");
+                    throw new System.ArgumentException("Number in the array cannot be greater than 6 or less than 1");
                 }
             }
              return input;

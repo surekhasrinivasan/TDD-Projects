@@ -29,5 +29,14 @@ namespace Tests
             var input = new int[] { 1, 2, 6, 7 };
             Assert.Throws<System.ArgumentException>(() => game.CheckScore(input));
         }
+
+        [Test]
+        public void ThrowExceptionIfNumberInAttemptArrayIsLessThan1()
+        {
+            var input = new int[] { 1, 2, 3, 0 };
+            Assert.Throws<System.ArgumentException>(() => game.CheckScore(input));
+        }
+
+
     }
 }
