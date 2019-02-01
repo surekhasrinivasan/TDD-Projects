@@ -10,15 +10,6 @@ namespace StringCalculatorService
     {
         public static int Add(string numbers)
         {
-            if (numbers == "")
-                return 0;
-
-            if (numbers.Length == 1)
-            {
-                int num = int.Parse(numbers);
-                return num;
-            }
-
             int sum = 0;
             char[] delimiters = new char[] { '/', ',', '\n', ';' };
             
@@ -26,9 +17,26 @@ namespace StringCalculatorService
 
             for(int i = 0; i < strNum.Length; i++)
             {
-                sum += int.Parse(strNum[i]);               
-            }
-            
+                int num = int.Parse(strNum[i]);
+                                
+                if(num < 0)
+                {
+                    throw new ArgumentException("Negatives not allowed and the negative that was passed:" + strNum[i]);              
+                }
+                if (numbers == "")
+                {
+                    return 0;
+                }
+                if (numbers.Length == 1)
+                {
+                    int number = int.Parse(numbers);
+                    return number;
+                }                  
+                else
+                {                    
+                    sum = sum + (num >= 1000 ? 0 : num);
+                }                
+            }            
             return sum;          
         }
     }

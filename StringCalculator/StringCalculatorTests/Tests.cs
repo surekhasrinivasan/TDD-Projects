@@ -75,8 +75,17 @@ namespace StringCalculatorTests
         public void ThrowExceptionIfInputHasNegativeNumbers()
         {
             var input = "-1, 2, 3";
-            Assert.Throws<System.ArgumentException>(() => Calculator.Add(input));
+            Assert.Throws<System.ArgumentException>(() => Calculator.Add(input), "Negatives not allowed");
         }
 
+        [Test]
+        public void IfInputNumbersIsBiggerThan1000IgnoreReturnTheSumOfOtherNumbers()
+        {
+            var input = "1, 2, 1001";
+            var expected = 3;
+            var actual = Calculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+        }        
     }
 }
