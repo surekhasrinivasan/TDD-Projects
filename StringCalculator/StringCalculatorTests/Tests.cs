@@ -17,7 +17,6 @@ namespace StringCalculatorTests
             var input = "";
             var expected = 0;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -27,7 +26,6 @@ namespace StringCalculatorTests
             var input = "1";
             var expected = 1;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -37,7 +35,6 @@ namespace StringCalculatorTests
             var input = "1, 2";
             var expected = 3;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -47,7 +44,6 @@ namespace StringCalculatorTests
             var input = "5, 5, 5, 5";
             var expected = 20;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -57,7 +53,6 @@ namespace StringCalculatorTests
             var input = "10\n2,30\n";
             var expected = 42;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -67,7 +62,6 @@ namespace StringCalculatorTests
             var input = "//;\n1;2";
             var expected = 3;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -84,7 +78,6 @@ namespace StringCalculatorTests
             var input = "1, 2, 1001";
             var expected = 3;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
 
@@ -94,7 +87,15 @@ namespace StringCalculatorTests
             var input = "//[***]\n1***2***3";
             var expected = 6;
             var actual = Calculator.Add(input);
-            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void IfInputAllowMultipleDelimitersReturnTheNumbersSum()
+        {
+            var input = "//[*][%]\n11*2%3";
+            var expected = 16;
+            var actual = Calculator.Add(input);
             Assert.AreEqual(expected, actual);
         }
     }
