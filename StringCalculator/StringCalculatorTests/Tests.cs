@@ -70,5 +70,13 @@ namespace StringCalculatorTests
             Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void ThrowExceptionIfInputHasNegativeNumbers()
+        {
+            var input = "-1, 2, 3";
+            Assert.Throws<System.ArgumentException>(() => Calculator.Add(input));
+        }
+
     }
 }
