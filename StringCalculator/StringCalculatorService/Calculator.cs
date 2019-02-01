@@ -18,12 +18,15 @@ namespace StringCalculatorService
                 int num = int.Parse(numbers);
                 return num;
             }
+
             int sum = 0;
-            string[] strNum = numbers.Split(',');
+            char[] delimiters = new char[] { '/', ',', '\n', ';' };
             
+            string[] strNum = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
             for(int i = 0; i < strNum.Length; i++)
             {
-                sum +=int.Parse(strNum[i]);
+                sum += int.Parse(strNum[i]);               
             }
             
             return sum;          

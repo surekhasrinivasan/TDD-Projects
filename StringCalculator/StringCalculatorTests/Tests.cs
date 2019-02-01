@@ -51,5 +51,24 @@ namespace StringCalculatorTests
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void IfInputHasNewLinesBetweenNumbersReturnTheirSum()
+        {
+            var input = "10\n2,30\n";
+            var expected = 42;
+            var actual = Calculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void IfInputHasDifferentDelimitersReturnTheSum()
+        {
+            var input = "//;\n1;2";
+            var expected = 3;
+            var actual = Calculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
