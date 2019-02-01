@@ -11,8 +11,8 @@ namespace StringCalculatorService
         public static int Add(string numbers)
         {
             int sum = 0;
-            char[] delimiters = new char[] { '/', ',', '\n', ';' };
-            
+            char[] delimiters = new char[] { '/', ',', '\n', ';', '*', '[', ']' };
+
             string[] strNum = numbers.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
             for(int i = 0; i < strNum.Length; i++)

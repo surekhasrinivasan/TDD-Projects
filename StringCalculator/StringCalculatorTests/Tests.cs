@@ -86,6 +86,16 @@ namespace StringCalculatorTests
             var actual = Calculator.Add(input);
             Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
-        }        
+        }
+
+        [Test]
+        public void IfInputDelimitersCanBeAnyLengthReturnTheNumbersSum()
+        {
+            var input = "//[***]\n1***2***3";
+            var expected = 6;
+            var actual = Calculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
