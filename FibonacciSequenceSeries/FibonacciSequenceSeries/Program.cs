@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fibonacci.Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,12 @@ namespace FibonacciSequenceSeries
     {
         static void Main(string[] args)
         {
-
+            var sequence = new FibonacciSequence();
+            foreach (var item in sequence.Take(50))
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
         }
     }
 }
