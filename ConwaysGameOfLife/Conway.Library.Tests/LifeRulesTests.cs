@@ -24,5 +24,25 @@ namespace Conway.Library.Tests
 
             Assert.AreEqual(CellState.Dead, newState);
         }
+
+        [Test]
+        public void LiveCell_2Or3LiveNeighbors_Lives(
+           [Values(2, 3)] int liveNeighbors)
+        {
+            var currentState = CellState.Alive;
+            CellState newState = LifeRules.GetNewState(currentState, liveNeighbors);
+
+            Assert.AreEqual(CellState.Alive, newState);
+        }
+
+        [Test]
+        public void LiveCell_MoreThan3LiveNeighbors_Dies(
+           [Range(4, 8)] int liveNeighbors)
+        {
+            var currentState = CellState.Alive;
+            CellState newState = LifeRules.GetNewState(currentState, liveNeighbors);
+
+            Assert.AreEqual(CellState.Dead, newState);
+        }
     }
 }

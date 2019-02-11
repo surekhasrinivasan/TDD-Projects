@@ -16,8 +16,8 @@ namespace Conway.Library
     {
         public static CellState GetNewState(CellState currentState, int liveNeighbors)
         {
-            if (currentState == CellState.Alive && liveNeighbors < 2)
-                return CellState.Dead;            
+            if (currentState == CellState.Alive && liveNeighbors < 2 || liveNeighbors > 3)
+                return CellState.Dead;
             return currentState;
         }
     }
