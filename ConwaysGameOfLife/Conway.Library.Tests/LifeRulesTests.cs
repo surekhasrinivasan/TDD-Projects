@@ -44,5 +44,15 @@ namespace Conway.Library.Tests
 
             Assert.AreEqual(CellState.Dead, newState);
         }
+
+        [Test]
+        public void DeadCell_Exactly3LiveNeighbors_Lives()
+        {
+            var currentState = CellState.Dead;
+            var liveNeighbors = 3;
+            CellState newState = LifeRules.GetNewState(currentState, liveNeighbors);
+
+            Assert.AreEqual(CellState.Alive, newState);
+        }
     }
 }

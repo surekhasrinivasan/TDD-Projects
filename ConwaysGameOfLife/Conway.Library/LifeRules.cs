@@ -18,6 +18,8 @@ namespace Conway.Library
         {
             if (currentState == CellState.Alive && liveNeighbors < 2 || liveNeighbors > 3)
                 return CellState.Dead;
+            if (currentState == CellState.Dead && liveNeighbors == 3)
+                return CellState.Alive;
             return currentState;
         }
     }
