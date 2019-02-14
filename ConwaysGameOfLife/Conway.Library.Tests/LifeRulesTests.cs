@@ -65,5 +65,15 @@ namespace Conway.Library.Tests
 
             Assert.AreEqual(CellState.Dead, newState);
         }
+
+        [Test]
+        public void DeadCell_MoreThan3LiveNeighbors_StaysDead(
+           [Range(4, 8)] int liveNeighbors)
+        {
+            var currentState = CellState.Dead;
+            CellState newState = LifeRules.GetNewState(currentState, liveNeighbors);
+
+            Assert.AreEqual(CellState.Dead, newState);
+        }
     }
 }
